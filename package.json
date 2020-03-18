@@ -44,7 +44,7 @@
     "sourceMaps": true
   },
   "bugs": {
-    "url": "https://github.com/bubblemind/reaction-sendgrid/issues"
+    "url": "https://github.com/samkonix/reaction-sendgrid/issues"
   },
   "dependencies": {
     "@sendgrid/mail": "^6.5.4"
@@ -69,7 +69,7 @@
   "eslintConfig": {
     "extends": "@bubblemind"
   },
-  "homepage": "https://github.com/bubblemind/reaction-sendgrid#readme",
+  "homepage": "https://github.com/samkonix/reaction-sendgrid#readme",
   "license": "MIT",
   "main": "./dist/main.js",
   "name": "@bubblemind/reaction-sendgrid",
@@ -84,7 +84,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bubblemind/reaction-sendgrid.git"
+    "url": "git+https://github.com/samkonix/reaction-sendgrid.git"
   },
   "scripts": {
     "build": "rimraf ./dist && babel src --out-dir ./dist",
