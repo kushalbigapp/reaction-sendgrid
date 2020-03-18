@@ -1,0 +1,96 @@
+{
+  "_args": [
+    [
+      "@bubblemind/reaction-sendgrid@1.0.0",
+      "/home/sam/reaction-development-platform/reaction"
+    ]
+  ],
+  "_from": "@bubblemind/reaction-sendgrid@1.0.0",
+  "_id": "@bubblemind/reaction-sendgrid@1.0.0",
+  "_inBundle": false,
+  "_location": "/@bubblemind/reaction-sendgrid",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@bubblemind/reaction-sendgrid@1.0.0",
+    "name": "@bubblemind/reaction-sendgrid",
+    "escapedName": "@bubblemind%2freaction-sendgrid",
+    "scope": "@bubblemind",
+    "rawSpec": "1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0.0"
+  },
+  "_resolved": "https://registry.npmjs.org/@bubblemind/reaction-sendgrid/-/reaction-sendgrid-1.0.0.tgz",
+  "_spec": "1.1.2",
+  "_where": "/home/sam/reaction-development-platform/reaction",
+  "author": {
+    "name": "Bubblemind Reaction Commerce",
+    "email": "contact@bubblemind.net"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-2"
+    ],
+    "plugins": [
+      [
+        "add-module-exports",
+        {
+          "addDefaultProperty": true
+        }
+      ]
+    ],
+    "sourceMaps": true
+  },
+  "bugs": {
+    "url": "https://github.com/bubblemind/reaction-sendgrid/issues"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.5.4"
+  },
+  "description": "Reaction application sendgrid wrapper for api v3",
+  "devDependencies": {
+    "@reactioncommerce/eslint-config": "^1.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "rimraf": "^2.6.2",
+    "semantic-release": "^15.13.25",
+    "watch": "^1.0.2"
+  },
+  "eslintConfig": {
+    "extends": "@bubblemind"
+  },
+  "homepage": "https://github.com/bubblemind/reaction-sendgrid#readme",
+  "license": "MIT",
+  "main": "./dist/main.js",
+  "name": "@bubblemind/reaction-sendgrid",
+  "prettier": {
+    "arrowParens": "always"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branch": "trunk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bubblemind/reaction-sendgrid.git"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && babel src --out-dir ./dist",
+    "lint": "eslint ./src",
+    "lintfix": "eslint ./src --fix",
+    "watch": "watch 'npm run build' src"
+  },
+  "version": "1.0.0"
+}
