@@ -1,0 +1,24 @@
+// from Email-smtp
+
+extend type Mutation {
+  "Use this mutation to verify the Sendgrid email settings"
+  verifySendgridEmailSettings(
+    "Mutation input"
+    input: VerifySendgridEmailSettingsInput!
+    ): VerifySendgridEmailSettingsInputPayload!
+}
+
+"Input for an `VerifySendgridEmailSettingsInput`"
+input VerifySendgridEmailSettingsInput {
+  "The ID of the shop this setting belongs to"
+  shopId: ID!
+}
+
+"Response payload for the verifySendgridEmailSettings mutation"
+type VerifySendgridEmailSettingsInputPayload {
+  "The same string you sent with the mutation params, for matching mutation calls with their responses"
+  clientMutationId: String
+
+  "True if the Sendgrid connection was made and authentication was successful."
+  isVerified: Boolean!
+}
