@@ -1,0 +1,24 @@
+{
+  "name": "reaction-sendgrid",
+  "version": "1.0.0",
+  "description": "Reaction commerce sendgrid plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samkonix/reaction-sendgrid.git"
+  },
+  "keywords": [
+    "reaction",
+    "commerce",
+    "sendgrid"
+  ],
+  "author": "Samuel Charnet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samkonix/reaction-sendgrid/issues"
+  },
+  "homepage": "https://github.com/samkonix/reaction-sendgrid#readme"
+}
