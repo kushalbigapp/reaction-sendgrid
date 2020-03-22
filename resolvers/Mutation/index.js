@@ -1,5 +1,5 @@
-import retryFailedSendgrid from "./retryFailedSendgrid.js"; //from core-service email
-import verifySendgridEmailSettings from "./verifySendgridEmailSettings.js"; // from plugin email-smtp
+import retryFailedSendgrid from "./retryFailedSendgrid.js";
+import verifySendgridEmailSettings from "./verifySendgridEmailSettings.js";
 
 export default {
   retryFailedSendgrid,

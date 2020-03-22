@@ -64,8 +64,6 @@ export default function processSendgridJobs(context) {
       //Logger.info("Sam : processSendgridJobs.js stringify job.data = " + JSON.stringify(job.data));
 
       if (!from || !to) {
-        // || !subject) {
-        // || !html) {
         const msg = "Sendgrid job requires an options object with to/from/subject/html.";
         Logger.error(`[Job]: ${msg}`);
         job.fail(msg, { fatal: true });
@@ -79,7 +77,6 @@ export default function processSendgridJobs(context) {
           from,
           to,
           subject,
-          //html,
           status: "processing",
           ...optionalEmailFields
         }

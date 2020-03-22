@@ -1,5 +1,4 @@
 import SimpleSchema from "simpl-schema";
-// import nodemailer from "@reactioncommerce/nodemailer";
 import ReactionError from "@reactioncommerce/reaction-error";
 import { SendgridConfig } from "../config.js";
 
@@ -21,17 +20,6 @@ export default async function verifySendgridEmailSettings(context, input) {
   const { shopId } = input;
 
   await context.validatePermissions("reaction:legacy:emails", "read", { shopId });
-
-  /* const transporter = nodemailer.createTransport(SMTPConfig);
-
-  let isVerified;
-  try {
-    isVerified = await transporter.verify();
-  } catch (error) {
-    throw new ReactionError(error.responseCode, error.response);
-  }*/
-
-  //TODO : verify sendinblue connection
 
   return isVerified;
 }

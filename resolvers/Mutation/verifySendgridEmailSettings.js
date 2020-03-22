@@ -7,10 +7,8 @@
  * @param {String} input.shopId - ShopID this setting belongs to.
  * @param {String} [args.input.clientMutationId] - An optional string identifying the mutation call
  * @param {Object} context - an object containing the per-request state
- * @returns {Promise<Object>} verifySendinblueEmailSettingsPayload
+ * @returns {Promise<Object>} verifySendgridEmailSettingsPayload
  */
-
- // from email-smtp
 
 export default async function verifySendgridEmailSettings(_, { input }, context) {
   const {
