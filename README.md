@@ -8,7 +8,7 @@ Sendgrid is an email marketing platform. It is used to send orders notifications
 
 ## Requirements
 
-Reaction GraphQL API for Reaction commerce v3
+Reaction GraphQL API for Reaction commerce v3 : https://github.com/reactioncommerce/reaction
 
 ## Configuration
 
