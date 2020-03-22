@@ -10,14 +10,58 @@ const config = envalid.cleanEnv(process.env, {
     default: false
   }),
   SENDGRID_API_KEY: str({
-    desc: "A Sendinblue Api v3 key",
+    desc: "A Sendgrid Api v3 key",
     default: ""
+  }),
+  SENDGRID_NEWORDER_TEMPLATE_ID: str({
+    desc: "The new order template id from sendgrid, if missing, the reaction template is used",
+    default: ""
+  }),
+  SENDGRID_NEWORDER_SUBJECT: str({
+    desc: "The new order subject",
+    default: "{{shop.name}}: Thank you for your order - {{order.referenceId}}"
+  }),
+  SENDGRID_SHIPPEDORDER_TEMPLATE_ID: str({
+    desc: "The shipped order template id from sendgrid, if missing, the reaction template is used",
+    default: ""
+  }),
+  SENDGRID_SHIPPEDORDER_SUBJECT: str({
+    desc: "The new order subject",
+    default: "{{shop.name}}: Your order has shipped - {{order.referenceId}}"
+  }),
+  SENDGRID_REFUNDEDORDER_TEMPLATE_ID: str({
+    desc: "The refunded order template id from sendgrid, if missing, the reaction template is used",
+    default: ""
+  }),
+  SENDGRID_REFUNDEDORDER_SUBJECT: str({
+    desc: "The refunded order subject",
+    default: "{{shop.name}}: Confirmation of refund for {{order.referenceId}}"
+  }),
+  SENDGRID_REFUNDEDITEM_TEMPLATE_ID: str({
+    desc: "The refunded item template id from sendgrid, if missing, the reaction template is used",
+    default: ""
+  }),
+  SENDGRID_REFUNDEDITEM_SUBJECT: str({
+    desc: "The refunded item subject",
+    default: "{{shop.name}}: Refund confirmation - {{order.referenceId}}"
   })
+
 }, {
   dotEnvPath: null
 });
 
-export const SendgridConfig = { logger: config.SENDGRID_DEBUG, apiKey: config.SENDGRID_API_KEY };
+export const SendgridConfig = { 
+  logger: config.SENDGRID_DEBUG, 
+  apiKey: config.SENDGRID_API_KEY,
+  newOrderTemplate: config.SENDGRID_NEWORDER_TEMPLATE_ID,
+  newOrderSubject: config.SENDGRID_NEWORDER_SUBJECT,
+  shippedOrderTemplate: config.SENDGRID_SHIPPEDORDER_TEMPLATE_ID,
+  shippedOrderSubject: config.SENDGRID_SHIPPEDORDER_SUBJECT,
+  refundedOrderTemplate: config.SENDGRID_REFUNDEDORDER_TEMPLATE_ID,
+  refundedOrderSubject: config.SENDGRID_REFUNDEDORDER_SUBJECT,
+  refundedItemTemplate: config.SENDGRID_REFUNDEDITEM_TEMPLATE_ID,
+  refundedItemSubject: config.SENDGRID_REFUNDEDITEM_SUBJECT
+};
 
 // Parse the MAIL_URL and add the parsed config
 /*if (typeof config.MAIL_URL === "string" && config.MAIL_URL.length) {

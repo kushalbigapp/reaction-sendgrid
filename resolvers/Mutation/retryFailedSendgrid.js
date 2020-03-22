@@ -1,7 +1,7 @@
 import { decodeJobOpaqueId, decodeShopOpaqueId } from "../../xforms/id.js";
 
 /**
- * @name Mutation.retryFailedSendinblue
+ * @name Mutation.retryFailedSendgrid
  * @method
  * @memberof Routes/GraphQL
  * @summary Retry a failed or cancelled email job
@@ -10,21 +10,21 @@ import { decodeJobOpaqueId, decodeShopOpaqueId } from "../../xforms/id.js";
  * @param {String} args.input.id - Email Job id
  * @param {String} [args.input.clientMutationId] - An optional string identifying the mutation call
  * @param {Object} context - an object containing the per-request state
- * @returns {Promise<Object>} RetryFailedSendinbluePayload
+ * @returns {Promise<Object>} RetryFailedSendgridPayload
  */
-export default async function retryFailedSendinblue(parentResult, { input }, context) {
+export default async function retryFailedSendgrid(parentResult, { input }, context) {
   const {
     clientMutationId = null,
     jobId: opaqueJobId,
     shopId: opaqueShopId
   } = input;
-  const resp = await context.mutations.retryFailedSendinblue(context, {
+  const resp = await context.mutations.retryFailedSendgrid(context, {
     jobId: decodeJobOpaqueId(opaqueJobId),
     shopId: decodeShopOpaqueId(opaqueShopId)
   });
 
   return {
     clientMutationId,
-    sendinblueSent: resp
+    sendgridSent: resp
   };
 }

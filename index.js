@@ -1,4 +1,4 @@
-import registerSendgridPlugin from "./sendgridPlugin";
+/* import registerSendgridPlugin from "./sendgridPlugin";
 
 const api = new ReactionAPI();
 
@@ -9,4 +9,4 @@ async function startAPI() {
 
 startAPI().catch((error) => {
   console.error(error);
-});
+}); */

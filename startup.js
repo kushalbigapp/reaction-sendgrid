@@ -1,5 +1,5 @@
 import processSendgridJobs from "./util/processSendgridJobs.js";
-import sendSendgridNotification from "./util/sendSendgridNotification.js";
+import sendgridNotification from "./util/sendgridNotification.js";
 
 /**
  * @summary Called on startup
@@ -8,7 +8,11 @@ import sendSendgridNotification from "./util/sendSendgridNotification.js";
  * @returns {undefined}
  */
 export default function sendgridStartup(context) {
+
+  // from core-service email
   processSendgridJobs(context);
-  context.appEvents.on("sendgridNotification", (...args) => sendSendgridNotification(context, ...args));
+
+  // from plugin email-smtp
+  context.appEvents.on("sendgridNotification", (...args) => sendgridNotification(context, ...args));
 }
 

@@ -4,7 +4,7 @@ import policies from "./policies.json";
 import startup from "./startup.js";
 import resolvers from "./resolvers/index.js";
 import schemas from "./schemas/index.js";
-import sendNotification from "./mutations/sendNotification.js";
+import sendgridNotification from "./mutations/sendgridNotification.js";
 /**
  * @summary Import and call this function to add this plugin to your API.
  * @param {ReactionAPI} app The ReactionAPI instance
@@ -12,13 +12,13 @@ import sendNotification from "./mutations/sendNotification.js";
  */
 export default async function registerSendgridPlugin(app) {
   await app.registerPlugin({
-    label: "Sendinblue",
-    name: "reaction-sendinblue",
+    label: "Sendgrid",
+    name: "reaction-sendgrid",
     version: app.context.appVersion,
     i18n,
     collections: {
-      SendinblueNotifications: {
-        name: "SendinblueNotifications",
+      SendgridNotifications: {
+        name: "SendgridNotifications",
         indexes: [
           // Create indexes. We set specific names for backwards compatibility
           // with indexes created by the aldeed:schema-index Meteor package.
@@ -31,7 +31,7 @@ export default async function registerSendgridPlugin(app) {
       schemas
     },
     mutations: {
-      sendEmail: sendNotification
+      sendEmail: sendgridNotification
     },
     policies,
     functionsByType: {

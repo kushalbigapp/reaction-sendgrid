@@ -1,6 +1,6 @@
 // from core-service email
 import retryFailedSendgrid from "./retryFailedSendgrid.js";
-import sendNotification from "./sendNotification.js";
+import sendgridNotification from "./sendgridNotification.js";
 // from plugin email-smtp
 import verifySendgridEmailSettings from "./verifySendgridEmailSettings.js";
 
@@ -8,7 +8,7 @@ import verifySendgridEmailSettings from "./verifySendgridEmailSettings.js";
 export default {
   // from core-service email
   retryFailedSendgrid,
-  sendNotification,
+  sendgridNotification,
   // from plugin email-smtp
-  verifySendinblueEmailSettings
+  verifySendgridEmailSettings
 };

@@ -1,11 +1,16 @@
-// from Email-smtp
-
 extend type Mutation {
-  "Use this mutation to verify the Sendgrid email settings"
+  "Use this mutation to verify the Sendgrid settings"
   verifySendgridEmailSettings(
     "Mutation input"
     input: VerifySendgridEmailSettingsInput!
     ): VerifySendgridEmailSettingsInputPayload!
+
+  "Retry a failed or cancelled sendgrid job"
+  retryFailedSendgrid(
+    "Mutation input"
+    input: RetryFailedSendgridInput!
+  ): RetryFailedSendgridPayload!
+
 }
 
 "Input for an `VerifySendgridEmailSettingsInput`"
@@ -21,4 +26,26 @@ type VerifySendgridEmailSettingsInputPayload {
 
   "True if the Sendgrid connection was made and authentication was successful."
   isVerified: Boolean!
+}
+
+
+"Input for `retryFailedSendgrid` mutation"
+input RetryFailedSendgridInput {
+  "An optional string identifying the mutation call, which will be returned in the response payload"
+  clientMutationId: String
+
+  "ID of Sendgrid Job to retry"
+  jobId: ID!
+
+  "Shop ID of Sendgride Job"
+  shopId: ID!
+}
+
+"Response payload for `retryFailedSendgrid` mutation"
+type RetryFailedSendgridPayload {
+  "The same string you sent with the mutation params, for matching mutation calls with their responses"
+  clientMutationId: String
+
+  "Sendinblue retry status"
+  sendgridSent: Boolean!
 }

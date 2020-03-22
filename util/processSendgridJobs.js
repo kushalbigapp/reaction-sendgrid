@@ -1,3 +1,5 @@
+// from core-service email
+
 import Logger from "@reactioncommerce/logger";
 
 /**
@@ -16,7 +18,7 @@ export default function processSendgridJobs(context) {
    * @param {String} message A message to log
    * @returns {undefined} undefined
    */
-  async function sendSendgridCompleted(job, message) {
+  async function sendgridCompleted(job, message) {
     const jobId = job._doc._id;
 
     await SendgridNotifications.updateOne({ jobId }, {
@@ -38,7 +40,7 @@ export default function processSendgridJobs(context) {
    * @param {String} message A message to log
    * @returns {undefined} undefined
    */
-  async function sendSendgridFailed(job, message) {
+  async function sendgridFailed(job, message) {
     const jobId = job._doc._id;
 
     await SendgridNotifications.updateOne({ jobId }, {
@@ -59,7 +61,10 @@ export default function processSendgridJobs(context) {
     async worker(job) {
       const { from, to, subject, html, ...optionalEmailFields } = job.data;
 
-      if (!from || !to || !subject) {
+      //Logger.info("Sam : processSendgridJobs.js stringify job.data = " + JSON.stringify(job.data));
+
+      if (!from || !to) {
+        // || !subject) {
         // || !html) {
         const msg = "Sendgrid job requires an options object with to/from/subject/html.";
         Logger.error(`[Job]: ${msg}`);
@@ -74,7 +79,7 @@ export default function processSendgridJobs(context) {
           from,
           to,
           subject,
-          // SAM html,
+          //html,
           status: "processing",
           ...optionalEmailFields
         }
