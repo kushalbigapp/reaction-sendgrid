@@ -6,6 +6,10 @@ This plugin isan interface between reaction commerce and the sendgrid email plat
 
 Sendgrid is an email marketing platform. It is used to send orders notifications email.
 
+## Requirements
+
+Reaction GraphQL API for Reaction commerce v3
+
 ## Configuration
 
 Add in reaction/.env :
