@@ -1,6 +1,6 @@
 {
   "name": "reaction-sendgrid",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Reaction commerce sendgrid plugin",
   "main": "sendgridPlugin.js",
   "type": "module",
