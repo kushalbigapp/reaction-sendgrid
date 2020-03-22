@@ -2,7 +2,7 @@
 
 ## Overview
 
-This plugin isan interface between reaction commerce and the sendgrid email platform http://wendgrid.com
+This plugin isan interface between reaction commerce and the sendgrid email platform http://www.sendgrid.com
 
 Sendgrid is an email marketing platform. It is used to send orders notifications email.
 
